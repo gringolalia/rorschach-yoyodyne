@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var deploy = require('gulp-gh-pages');
 var gulpLoadPlugins = require('gulp-load-plugins');
 var browserSyncLib = require('browser-sync');
 var pjson = require('./package.json');
@@ -62,3 +63,10 @@ gulp.task('serve', [
 
 // Testing
 gulp.task('test', ['eslint']);
+
+// Deploy
+
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
