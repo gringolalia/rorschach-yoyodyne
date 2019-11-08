@@ -1,0 +1,76 @@
+//- Custom Configuration
+block config
+  //- Setup site's base URL to match the "baseUrl" key within `package.json`
+  //- Otherwise default to relative pathing
+  - var baseUrl = config.baseUrl || './'
+
+doctype html
+<html class='no-js' lang='en'>
+
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+  title Rorschach Yoyodyne
+  meta(name='description', content= 'Inkspots Are a Vocal Group')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  block stylesheets
+    //- link(rel='stylesheet', href= baseUrl + 'styles/main.less')
+    //- link(rel='stylesheet', href= 'ink/dist/css/ink.min.css')
+    //- link(rel='stylesheet', href= 'ink/dist/css/ink-flex.min.css')
+
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/css/ink.min.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/css/ink-flex.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=News+Cycle|Material+Icons')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+
+  style.
+    
+    body, html {
+      font-family: 'News Cycle', sans-serif;
+      font-weight: 300 !important;
+      font-style: normal !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'News Cycle', sans-serif;
+      font-weight: 300 !important;
+      font-style: normal !important;
+    }
+
+    .dignity {
+      font-family: 'News Cycle', sans-serif;
+      font-weight: 300 !important;
+      font-style: normal !important;
+    }
+
+    i, .material-icons {
+      vertical-align: middle;
+    }
+
+
+body
+
+  nav.ink-navigation
+    ul.menu.horizontal.black
+      li.heading
+        a(href='#') In Principio
+      li
+        a(href='#') In Media Res
+        ul.submenu
+          li
+            a(href='#') Hesiod
+          li
+            a(href='#') Lucretius
+          li
+            a(href='#') Ovidius Naso  
+          li
+            a(href='#') Vergilius Illegitimus
+      li
+        a(href='#') About
+
+  block content
+
+  block scripts
+    script(src= baseUrl + 'scripts/main.js')
+
+</html>
